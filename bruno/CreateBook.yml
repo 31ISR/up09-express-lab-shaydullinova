@@ -1,0 +1,69 @@
+info:
+  name: CreateBook
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:3000/api/books
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Преступление и наказание",
+        "year": 1866,
+        "author": "Федор Достоевский",
+        "isRead": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: CreateBook
+    request:
+      url: http://localhost:3000/api/books
+      method: POST
+      body:
+        type: json
+        data: |-
+          {
+            "title": "Преступление и наказание",
+            "year": 1866,
+            "author": "Федор Достоевский",
+            "isRead": true
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "134"
+        - name: etag
+          value: W/"86-GZHGvy/sFLwOo+O9YHeN9zeedMI"
+        - name: date
+          value: Wed, 25 Nov 2026 10:38:22 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+            "id": 1795603102228,
+            "title": "Преступление и наказание",
+            "year": 1866,
+            "author": "Федор Достоевский"
+          }
+
+docs: Добавление книги

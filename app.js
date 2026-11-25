@@ -3,7 +3,7 @@ const bookRouter = require('./routes/books')
 
 const app = express()
 
-app.use(express.json)
+app.use(express.json())
 
 app.use((req, res, next) => {
     const startedAt = new Date
@@ -21,8 +21,7 @@ app.get('/', (req, res) => {
 app.use('/api/books', bookRouter)
 
 app.use((req, res) => {
-    res.status(404).json({error: `Маршрут ${req.originalUrl}
-    не найден`})
+    res.status(404).json({error: `Маршрут ${req.originalUrl} не найден`})
 })
 
 module.exports = app
