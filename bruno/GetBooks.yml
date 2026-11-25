@@ -1,0 +1,67 @@
+info:
+  name: GetBooks
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: http://localhost:3000/api/books
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: GetBooks
+    request:
+      url: http://localhost:3000/api/books
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: x-powered-by
+          value: Express
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: content-length
+          value: "338"
+        - name: etag
+          value: W/"152-twwM7+2Di3I/2qrA+urLDUEA0MQ"
+        - name: date
+          value: Wed, 25 Nov 2026 10:31:29 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          [
+            {
+              "id": "2",
+              "title": "Гарри Поттер и философский камень",
+              "year": 1997,
+              "author": "Дж. К. Роулинг",
+              "isRead": false
+            },
+            {
+              "id": "3",
+              "title": "Дюна",
+              "year": 1965,
+              "author": "Фрэнк Герберт",
+              "isRead": true
+            },
+            {
+              "id": 1795600749239,
+              "title": "Война и мир",
+              "year": 1869,
+              "author": "Лев Толстой"
+            }
+          ]
+
+docs: Получение списка книг

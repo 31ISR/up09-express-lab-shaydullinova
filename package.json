@@ -1,0 +1,25 @@
+{
+  "name": "up09-express-lab-shaydullinova",
+  "version": "1.0.0",
+  "description": "- Поднять собственный бэкенд на Express и понять, как устроен запрос → ответ. - Хранить данные **в памяти процесса** — база данных не нужна. - Описать все запросы в коллекции **Bruno**, проверить их вручную и приложить к работе в папке `bruno` - Хостить работу не надо: всё проверяется локально.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch ser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/31ISR/up09-express-lab-shaydullinova.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/31ISR/up09-express-lab-shaydullinova/issues"
+  },
+  "homepage": "https://github.com/31ISR/up09-express-lab-shaydullinova#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
